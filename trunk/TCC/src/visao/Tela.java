@@ -93,8 +93,10 @@ public class Tela extends javax.swing.JFrame {
         param.setYmax(jPanelDesenho.getHeight());
 
         jTextFieldMMQ.setBackground(Color.WHITE);
+        jTextFieldResultadoAlcance.setBackground(Color.WHITE);
+        jTextFieldResultadoContribuicao.setBackground(Color.WHITE);
+        jTextFieldResultadoEfeitoPepita.setBackground(Color.WHITE);
 
-        jSliderAlcance.setMaximum(jPanelDesenho.getWidth() - 10);
         jSliderAlcance.setValue(jSliderAlcance.getMaximum() / 2);
 
         jButtonIniciarAG.setIcon(aplicarAG);
@@ -219,6 +221,14 @@ public class Tela extends javax.swing.JFrame {
         jButtonVoltarTelaAG = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTableResultados = new javax.swing.JTable();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextFieldResultadoAlcance = new javax.swing.JTextField();
+        jTextFieldResultadoEfeitoPepita = new javax.swing.JTextField();
+        jTextFieldResultadoContribuicao = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
         jButtonVerResultado = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArquivo = new javax.swing.JMenu();
@@ -250,7 +260,7 @@ public class Tela extends javax.swing.JFrame {
         );
         jPanelDesenhoLayout.setVerticalGroup(
             jPanelDesenhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
+            .addGap(0, 414, Short.MAX_VALUE)
         );
 
         jComboBoxModelo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Modelo", "Circular", "Esferico", "Exponencial", "Gaussiano", "Linear" }));
@@ -292,8 +302,7 @@ public class Tela extends javax.swing.JFrame {
         });
 
         jSliderAlcance.setBackground(new java.awt.Color(211, 211, 252));
-        jSliderAlcance.setMaximum(10000);
-        jSliderAlcance.setValue(5000);
+        jSliderAlcance.setMaximum(500);
         jSliderAlcance.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jSliderAlcance.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -1031,7 +1040,7 @@ public class Tela extends javax.swing.JFrame {
             jInternalFrameAGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameAGLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1079,11 +1088,74 @@ public class Tela extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(jTableResultados);
 
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Melhor Resultado", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
+
+        jLabel14.setText("A:");
+
+        jLabel15.setText("C0:");
+
+        jLabel16.setText("C1:");
+
+        jTextFieldResultadoAlcance.setEditable(false);
+        jTextFieldResultadoAlcance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldResultadoEfeitoPepita.setEditable(false);
+        jTextFieldResultadoEfeitoPepita.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldResultadoContribuicao.setEditable(false);
+        jTextFieldResultadoContribuicao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         jButtonVerResultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVerResultadoActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(10, 10, 10)
+                        .addComponent(jTextFieldResultadoAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldResultadoEfeitoPepita, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldResultadoContribuicao, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jButtonVerResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextFieldResultadoAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jTextFieldResultadoEfeitoPepita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jTextFieldResultadoContribuicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonVerResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout jInternalFrameResultadosLayout = new javax.swing.GroupLayout(jInternalFrameResultados.getContentPane());
         jInternalFrameResultados.getContentPane().setLayout(jInternalFrameResultadosLayout);
@@ -1092,13 +1164,12 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(jInternalFrameResultadosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrameResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jInternalFrameResultadosLayout.createSequentialGroup()
-                        .addComponent(jButtonVerResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonVoltarTelaAG, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrameResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButtonVoltarTelaAG, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jInternalFrameResultadosLayout.setVerticalGroup(
@@ -1108,10 +1179,10 @@ public class Tela extends javax.swing.JFrame {
                 .addGroup(jInternalFrameResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameResultadosLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jInternalFrameResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonVoltarTelaAG, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonVerResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButtonVoltarTelaAG, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -1235,6 +1306,16 @@ public class Tela extends javax.swing.JFrame {
 
             t.POSICAO = jProgressBarAguarde.getMaximum();
             t.interrupt();
+
+            /* Mostra melhor cromossomo */
+            int linha = jTableResultados.getRowCount() - 1;
+            int a = new Integer("" + jTableResultados.getValueAt(linha, 0));
+            double c0 = Double.parseDouble("" + jTableResultados.getValueAt(linha, 1));
+            double c1 = Double.parseDouble("" + jTableResultados.getValueAt(linha, 2));
+            jTextFieldResultadoAlcance.setText("" + a);
+            jTextFieldResultadoEfeitoPepita.setText("" + c0);
+            jTextFieldResultadoContribuicao.setText("" + c1);
+
             this.desenhaGrafico();
         } catch (Exception e) {
             System.out.println("erro aqui" + e);
@@ -1529,6 +1610,13 @@ public class Tela extends javax.swing.JFrame {
 }//GEN-LAST:event_jButtonCarregarDadosArquivoTextoActionPerformed
 
     private void jMenuItemDadosEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDadosEntradaActionPerformed
+        jInternalFrameTelaSemivariograma.setVisible(false);
+        jInternalFrameResultados.setVisible(false);
+        jInternalFrameAG.setVisible(false);
+        jSliderAlcance.setValue(jSliderAlcance.getMaximum() / 2);
+        jSliderEfeitoPepita.setValue(0);
+        jSliderContribuicao.setValue(2200);
+
         modelo = (DefaultTableModel) jTablePlanilha.getModel();
         while (modelo.getRowCount() > 0) {
             modelo.removeRow(0);
@@ -1555,7 +1643,7 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemDadosEntradaActionPerformed
 
     private void jMenuItemAGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAGActionPerformed
-        if(jInternalFrameResultados.isVisible()){
+        if (jInternalFrameResultados.isVisible()) {
             jInternalFrameResultados.setVisible(false);
         }
         Component content = this.getContentPane();
@@ -1568,11 +1656,18 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemAGActionPerformed
 
     private void jButtonVerResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerResultadoActionPerformed
-        this.mostraResultado();
+        jSliderAlcance.setValue(Integer.parseInt(jTextFieldResultadoAlcance.getText()));
+        jSliderEfeitoPepita.setValue((int) (Double.parseDouble(jTextFieldResultadoEfeitoPepita.getText()) * 10000));
+        jSliderContribuicao.setValue((int) (Double.parseDouble(jTextFieldResultadoContribuicao.getText()) * 10000));
+
+        if (jInternalFrameTelaSemivariograma.isVisible()) {
+            jInternalFrameTelaSemivariograma.setVisible(false);
+        }
+        jInternalFrameTelaSemivariograma.setVisible(true);
     }//GEN-LAST:event_jButtonVerResultadoActionPerformed
 
     private void jTableResultadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableResultadosMouseClicked
-        if(evt.getClickCount() == 2){
+        if (evt.getClickCount() == 2) {
             this.mostraResultado();
         }
     }//GEN-LAST:event_jTableResultadosMouseClicked
@@ -1625,6 +1720,9 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1648,6 +1746,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanelCruzamento;
     private javax.swing.JPanel jPanelDesenho;
     private javax.swing.JPanel jPanelMutacao;
@@ -1660,6 +1759,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSliderAlcance;
     private javax.swing.JSlider jSliderContribuicao;
     private javax.swing.JSlider jSliderCutOff;
@@ -1676,6 +1776,9 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldElitismo;
     private javax.swing.JTextField jTextFieldMMQ;
     private javax.swing.JTextField jTextFieldNumGeracoes;
+    private javax.swing.JTextField jTextFieldResultadoAlcance;
+    private javax.swing.JTextField jTextFieldResultadoContribuicao;
+    private javax.swing.JTextField jTextFieldResultadoEfeitoPepita;
     private javax.swing.JTextField jTextFieldTamPopulacao;
     private javax.swing.JTextField jTextFieldTxCruzamento;
     private javax.swing.JTextField jTextFieldTxMutacao;
@@ -1872,14 +1975,14 @@ public class Tela extends javax.swing.JFrame {
             int a = new Integer("" + jTableResultados.getValueAt(linha, 0));
             double c0 = Double.parseDouble("" + jTableResultados.getValueAt(linha, 1));
             double c1 = Double.parseDouble("" + jTableResultados.getValueAt(linha, 2));
-            jTextFieldAlcance.setText(""+a);
+            jTextFieldAlcance.setText("" + a);
             jTextFieldEfeitoPepita.setText("" + c0);
             jTextFieldContribuicao.setText("" + c1);
             jSliderAlcance.setValue(a);
-            jSliderEfeitoPepita.setValue((int)(c0*10000));
-            jSliderContribuicao.setValue((int)(c1*10000));
+            jSliderEfeitoPepita.setValue((int) (c0 * 10000));
+            jSliderContribuicao.setValue((int) (c1 * 10000));
 
-            if(jInternalFrameTelaSemivariograma.isVisible()){
+            if (jInternalFrameTelaSemivariograma.isVisible()) {
                 jInternalFrameTelaSemivariograma.setVisible(false);
             }
             jInternalFrameTelaSemivariograma.setVisible(true);
