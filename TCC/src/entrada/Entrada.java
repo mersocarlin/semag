@@ -110,28 +110,28 @@ public class Entrada {
      * se nao existe, adiciona na lista de distancias, atualiza a ocorrencia e calcula o
      * valor da semivariancia
      * @param h
-     * @param p1
-     * @param p2
+     * @param Zs
+     * @param Zsh
      */
-    public void existeDistancia(H h, Ponto p1, Ponto p2) {
+    public void existeDistancia(H h, Ponto Zs, Ponto Zsh) {
         boolean existe = false;
         if (this.distancias.size() > 0) {
             for (int i = 0; i < this.distancias.size(); i++) {
                 if (this.distancias.get(i).compareTo(h) == 0) {
                     this.distancias.get(i).setOcorrencia(this.distancias.get(i).getOcorrencia() + 1);
-                    this.distancias.get(i).calculaMetodoEstimacao(p1.getZ(), p2.getZ());
+                    this.distancias.get(i).calculaMetodoEstimacao(Zs.getZ(), Zsh.getZ());
                     existe = true;
                     break;
                 }
             }
             if (!existe) {
                 h.setOcorrencia(h.getOcorrencia() + 1);
-                h.calculaMetodoEstimacao(p1.getZ(), p2.getZ());
+                h.calculaMetodoEstimacao(Zs.getZ(), Zsh.getZ());
                 this.distancias.add(h);
             }
         } else {
             h.setOcorrencia(h.getOcorrencia() + 1);
-            h.calculaMetodoEstimacao(p1.getZ(), p2.getZ());
+            h.calculaMetodoEstimacao(Zs.getZ(), Zsh.getZ());
             this.distancias.add(h);
         }
 
@@ -143,7 +143,9 @@ public class Entrada {
                 if (i != j) {
                     H h = new H();
                     h.setDistancia(listaPontos.get(i).distancia(listaPontos.get(j)));
-                    this.existeDistancia(h, listaPontos.get(i), listaPontos.get(j));
+                    Ponto Zs = new Ponto(listaPontos.get(i));
+                    Ponto Zsh = new Ponto(listaPontos.get(j));
+                    this.existeDistancia(h, Zs, Zsh);
                     
                     if(h.getDistancia() > this.maiorH){
                         this.maiorH = h.getDistancia();

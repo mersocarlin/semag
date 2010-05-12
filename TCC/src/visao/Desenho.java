@@ -20,7 +20,6 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.ui.RectangleInsets;
 
 /**
  *
@@ -57,7 +56,6 @@ public class Desenho extends JPanel {
      */
     private XYSeries desenhaMetodoEstimacao(Graphics g) {
         if (!param.getMetodoEstimacao().equals("Metodo")) {
-            g.setColor(Color.RED);
             try {
                 param.setYmax(param.getPontos().getYMaxMetodo(param.getMetodoEstimacao()));
                 param.setListaValores(new ArrayList<Integer>());
@@ -92,20 +90,6 @@ public class Desenho extends JPanel {
         try {
             param.setY(new ArrayList(param.getModelo().calculaModeloMatematico(param.getUmax(), param.getModeloMatematico())));
             param.setYmax(((Double) param.getY().get(param.getY().size() - 1)) + 0.3); //atualiza proporcao da tela
-
-            g.setColor(Color.LIGHT_GRAY);
-            g.drawLine(param.getModelo().getAlcance() + param.getUmin(), param.getVmax() + param.getVmin(),
-                    param.getModelo().getAlcance() + param.getUmin(),
-                    (param.getVmax() - (int) this.transformaCoordenadaY((Double) param.getY().get(param.getUmax() - 1))) + param.getVmin());
-
-            g.setColor(Color.BLUE);
-            g.drawString("a", param.getModelo().getAlcance() + param.getUmin() - 3, param.getVmax() + 30);
-            if (param.getModeloMatematico().equals("Circular")) {
-                g.drawString("C0", 0, param.getVmax() + param.getVmin());
-            } else {
-                g.drawString("C0", 0, (int) (param.getVmax() - this.transformaCoordenadaY(param.getModelo().getEfeitoPepita())) + param.getVmin());
-            }
-
             param.setHashModelo(new HashMap<Integer, Integer>());
             List<Integer> listaX = new ArrayList<Integer>();
             List<Integer> listaY = new ArrayList<Integer>();
