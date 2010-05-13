@@ -260,7 +260,7 @@ public class Tela extends javax.swing.JFrame {
         );
         jPanelDesenhoLayout.setVerticalGroup(
             jPanelDesenhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
+            .addGap(0, 406, Short.MAX_VALUE)
         );
 
         jComboBoxModelo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Modelo", "Circular", "Esferico", "Exponencial", "Gaussiano", "Linear" }));
@@ -879,7 +879,7 @@ public class Tela extends javax.swing.JFrame {
 
         jLabel6.setText("Num. Gerações:");
 
-        jTextFieldNumGeracoes.setText("30");
+        jTextFieldNumGeracoes.setText("50");
         jTextFieldNumGeracoes.setNextFocusableComponent(jTextFieldTxMutacao);
         jTextFieldNumGeracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -909,7 +909,7 @@ public class Tela extends javax.swing.JFrame {
 
         jLabel8.setText("Tx. Cruzamento (%):");
 
-        jTextFieldTxCruzamento.setText("70");
+        jTextFieldTxCruzamento.setText("75");
         jTextFieldTxCruzamento.setNextFocusableComponent(jTextFieldElitismo);
         jTextFieldTxCruzamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1031,17 +1031,11 @@ public class Tela extends javax.swing.JFrame {
         jInternalFrameAG.getContentPane().setLayout(jInternalFrameAGLayout);
         jInternalFrameAGLayout.setHorizontalGroup(
             jInternalFrameAGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameAGLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jInternalFrameAGLayout.setVerticalGroup(
             jInternalFrameAGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameAGLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
         );
 
         jInternalFrameAG.setBounds(50, 20, 670, 280);
