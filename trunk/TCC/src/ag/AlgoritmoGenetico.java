@@ -584,7 +584,7 @@ public class AlgoritmoGenetico {
                         if (!filho.getFitness().isInfinite()) {
                             cromossomos.add(filho);
                         } else {
-                            //System.out.println("fitness infinito");
+                            System.out.println("fitness infinito");
                         }
                     }
 
