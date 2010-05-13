@@ -20,6 +20,9 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Alt+1"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/entrada.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Dados da Entrada"/>
               </Properties>
               <Events>
@@ -30,6 +33,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Alt+2"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/semivariograma.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Semivariograma"/>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -42,6 +48,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Alt+3"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/ag.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Algoritmo Gen&#xe9;tico"/>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -1065,6 +1074,9 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="jButtonIniciarAG">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagens/aplicar.png"/>
+                    </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Iniciar AG"/>
                   </Properties>
                   <Events>
@@ -1418,6 +1430,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="jButtonVoltarTelaAG">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/voltar.png"/>
+                </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Retorna para as configura&#xe7;&#xf5;es do AG"/>
               </Properties>
               <Events>
@@ -1555,6 +1570,11 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator1">
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonVerResultado">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagens/verResultado.png"/>
+                    </Property>
+                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVerResultadoActionPerformed"/>
                   </Events>
