@@ -58,12 +58,6 @@ public class Tela extends javax.swing.JFrame {
     private BufferedImage bi;
     Parametros param;
     AlgoritmoGenetico ag;
-    Icon aplicarAG = new ImageIcon("arquivos/imagens/aplicar.png");
-    Icon voltar = new ImageIcon("arquivos/imagens/voltar.png");
-    Icon semivariograma = new ImageIcon("arquivos/imagens/semivariograma.png");
-    Icon algoritmogenetico = new ImageIcon("arquivos/imagens/ag.png");
-    Icon entrada = new ImageIcon("arquivos/imagens/entrada.png");
-    Icon verResultado = new ImageIcon("arquivos/imagens/verResultado.png");
     AtualizaMMQ atualiza;
 
     /** Creates new form Tela */
@@ -79,7 +73,7 @@ public class Tela extends javax.swing.JFrame {
 
         /* Background */
         try {
-            bi = ImageIO.read(new File("arquivos/imagens/background.jpg"));
+            bi = ImageIO.read(new File("arquivos/background.jpg"));
         } catch (Exception e) {
             System.out.println("Erro no carregamento do background: " + e);
         }
@@ -98,14 +92,6 @@ public class Tela extends javax.swing.JFrame {
         jTextFieldResultadoEfeitoPepita.setBackground(Color.WHITE);
 
         jSliderAlcance.setValue(jSliderAlcance.getMaximum() / 2);
-
-        jButtonIniciarAG.setIcon(aplicarAG);
-        jButtonVoltarTelaAG.setIcon(voltar);
-        jButtonVerResultado.setIcon(verResultado);
-
-        jMenuItemTelaSemivariograma.setIcon(semivariograma);
-        jMenuItemDadosEntrada.setIcon(entrada);
-        jMenuItemAG.setIcon(algoritmogenetico);
 
         jTableArquivoTexto.getTableHeader().setReorderingAllowed(false);
         jTablePlanilha.getTableHeader().setReorderingAllowed(false);
@@ -595,7 +581,7 @@ public class Tela extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -681,7 +667,7 @@ public class Tela extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonCarregarDadosArquivoTexto)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Arquivo de Texto", jPanel6);
@@ -699,7 +685,7 @@ public class Tela extends javax.swing.JFrame {
             jInternalFrameEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameEntradaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -797,6 +783,7 @@ public class Tela extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
+        jButtonIniciarAG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/aplicar.png"))); // NOI18N
         jButtonIniciarAG.setToolTipText("Iniciar AG");
         jButtonIniciarAG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1014,7 +1001,7 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jProgressBarAguarde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -1035,7 +1022,7 @@ public class Tela extends javax.swing.JFrame {
         );
         jInternalFrameAGLayout.setVerticalGroup(
             jInternalFrameAGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jInternalFrameAG.setBounds(50, 20, 670, 280);
@@ -1050,6 +1037,7 @@ public class Tela extends javax.swing.JFrame {
         jTextAreaResultado.setRows(5);
         jScrollPane1.setViewportView(jTextAreaResultado);
 
+        jButtonVoltarTelaAG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/voltar.png"))); // NOI18N
         jButtonVoltarTelaAG.setToolTipText("Retorna para as configurações do AG");
         jButtonVoltarTelaAG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1099,6 +1087,7 @@ public class Tela extends javax.swing.JFrame {
         jTextFieldResultadoContribuicao.setEditable(false);
         jTextFieldResultadoContribuicao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        jButtonVerResultado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/verResultado.png"))); // NOI18N
         jButtonVerResultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVerResultadoActionPerformed(evt);
@@ -1187,6 +1176,7 @@ public class Tela extends javax.swing.JFrame {
         jMenuArquivo.setText("Arquivo");
 
         jMenuItemDadosEntrada.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemDadosEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/entrada.png"))); // NOI18N
         jMenuItemDadosEntrada.setText("Dados da Entrada");
         jMenuItemDadosEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1196,6 +1186,7 @@ public class Tela extends javax.swing.JFrame {
         jMenuArquivo.add(jMenuItemDadosEntrada);
 
         jMenuItemTelaSemivariograma.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemTelaSemivariograma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/semivariograma.png"))); // NOI18N
         jMenuItemTelaSemivariograma.setText("Semivariograma");
         jMenuItemTelaSemivariograma.setEnabled(false);
         jMenuItemTelaSemivariograma.addActionListener(new java.awt.event.ActionListener() {
@@ -1206,6 +1197,7 @@ public class Tela extends javax.swing.JFrame {
         jMenuArquivo.add(jMenuItemTelaSemivariograma);
 
         jMenuItemAG.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemAG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ag.png"))); // NOI18N
         jMenuItemAG.setText("Algoritmo Genético");
         jMenuItemAG.setEnabled(false);
         jMenuItemAG.addActionListener(new java.awt.event.ActionListener() {
