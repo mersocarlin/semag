@@ -29,8 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -216,12 +214,26 @@ public class Tela extends javax.swing.JFrame {
         jTextFieldResultadoContribuicao = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jButtonVerResultado = new javax.swing.JButton();
+        jInternalFrameSobre = new javax.swing.JInternalFrame();
+        jPanel8 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabelImagem = new javax.swing.JLabel();
+        javax.swing.JLabel appTitleLabel = new javax.swing.JLabel();
+        javax.swing.JLabel versionLabel = new javax.swing.JLabel();
+        javax.swing.JLabel vendorLabel = new javax.swing.JLabel();
+        javax.swing.JLabel homepageLabel = new javax.swing.JLabel();
+        javax.swing.JLabel appVersionLabel = new javax.swing.JLabel();
+        javax.swing.JLabel appVendorLabel = new javax.swing.JLabel();
+        javax.swing.JLabel appHomepageLabel = new javax.swing.JLabel();
+        javax.swing.JLabel appTitleLabel1 = new javax.swing.JLabel();
+        javax.swing.JLabel versionLabel1 = new javax.swing.JLabel();
+        javax.swing.JLabel appVersionLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArquivo = new javax.swing.JMenu();
         jMenuItemDadosEntrada = new javax.swing.JMenuItem();
         jMenuItemTelaSemivariograma = new javax.swing.JMenuItem();
         jMenuItemAG = new javax.swing.JMenuItem();
         jMenuSobre = new javax.swing.JMenu();
+        jMenuItemSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Software SEMAG - Hemerson L. S. Carlin");
@@ -1173,6 +1185,113 @@ public class Tela extends javax.swing.JFrame {
         jInternalFrameResultados.setBounds(50, 10, 770, 540);
         jDesktopPane1.add(jInternalFrameResultados, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
+        jInternalFrameSobre.setClosable(true);
+        jInternalFrameSobre.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        jInternalFrameSobre.setTitle("Sobre Estimação dos Parâmetros de Semivariogramas Utilizando Algoritmos Genéticos");
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagemsobre.png"))); // NOI18N
+
+        appTitleLabel.setFont(appTitleLabel.getFont().deriveFont(appTitleLabel.getFont().getStyle() | java.awt.Font.BOLD, appTitleLabel.getFont().getSize()+4));
+        appTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        appTitleLabel.setText("Estimação dos Parâmetros de Semivariogramas");
+
+        versionLabel.setFont(versionLabel.getFont().deriveFont(versionLabel.getFont().getStyle() | java.awt.Font.BOLD));
+        versionLabel.setText("Versão: ");
+
+        vendorLabel.setFont(vendorLabel.getFont().deriveFont(vendorLabel.getFont().getStyle() | java.awt.Font.BOLD));
+        vendorLabel.setText("Desenvolvedor:");
+
+        homepageLabel.setFont(homepageLabel.getFont().deriveFont(homepageLabel.getFont().getStyle() | java.awt.Font.BOLD));
+        homepageLabel.setText("Contato:");
+
+        appVersionLabel.setText("1.0");
+
+        appVendorLabel.setText("Hemerson Leandro Siqueira Carlin");
+
+        appHomepageLabel.setText("mersocarlin@gmail.com");
+
+        appTitleLabel1.setFont(appTitleLabel1.getFont().deriveFont(appTitleLabel1.getFont().getStyle() | java.awt.Font.BOLD, appTitleLabel1.getFont().getSize()+4));
+        appTitleLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        appTitleLabel1.setText("Utilizando Algoritmos Genéticos");
+
+        versionLabel1.setFont(versionLabel1.getFont().deriveFont(versionLabel1.getFont().getStyle() | java.awt.Font.BOLD));
+        versionLabel1.setText("Orientador:");
+
+        appVersionLabel1.setText("André Luiz Brun");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(jLabelImagem)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(versionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(vendorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(homepageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(versionLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(appHomepageLabel)
+                            .addComponent(appVersionLabel)
+                            .addComponent(appVersionLabel1)
+                            .addComponent(appVendorLabel)))
+                    .addComponent(appTitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+                    .addComponent(appTitleLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(appTitleLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(appTitleLabel1)
+                .addGap(38, 38, 38)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(versionLabel1)
+                    .addComponent(appVersionLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(versionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(appVersionLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vendorLabel)
+                    .addComponent(appVendorLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(homepageLabel)
+                    .addComponent(appHomepageLabel))
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addComponent(jLabelImagem, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jInternalFrameSobreLayout = new javax.swing.GroupLayout(jInternalFrameSobre.getContentPane());
+        jInternalFrameSobre.getContentPane().setLayout(jInternalFrameSobreLayout);
+        jInternalFrameSobreLayout.setHorizontalGroup(
+            jInternalFrameSobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameSobreLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jInternalFrameSobreLayout.setVerticalGroup(
+            jInternalFrameSobreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameSobreLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jInternalFrameSobre.setBounds(0, 0, 614, 246);
+        jDesktopPane1.add(jInternalFrameSobre, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         jMenuArquivo.setText("Arquivo");
 
         jMenuItemDadosEntrada.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK));
@@ -1209,7 +1328,16 @@ public class Tela extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuArquivo);
 
-        jMenuSobre.setText("Sobre");
+        jMenuSobre.setText("Ajuda");
+
+        jMenuItemSobre.setText("Sobre");
+        jMenuItemSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSobreActionPerformed(evt);
+            }
+        });
+        jMenuSobre.add(jMenuItemSobre);
+
         jMenuBar1.add(jMenuSobre);
 
         setJMenuBar(jMenuBar1);
@@ -1658,6 +1786,14 @@ public class Tela extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTableResultadosMouseClicked
 
+    private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
+        Component content = this.getContentPane();
+        int x = (content.getWidth() - jInternalFrameSobre.getWidth()) / 2;
+        int y = (content.getHeight() - jInternalFrameSobre.getHeight()) / 2;
+        jInternalFrameSobre.setLocation(x, y);
+        jInternalFrameSobre.setVisible(true);
+    }//GEN-LAST:event_jMenuItemSobreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1700,6 +1836,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JInternalFrame jInternalFrameAG;
     private javax.swing.JInternalFrame jInternalFrameEntrada;
     private javax.swing.JInternalFrame jInternalFrameResultados;
+    private javax.swing.JInternalFrame jInternalFrameSobre;
     private javax.swing.JInternalFrame jInternalFrameTelaSemivariograma;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1724,6 +1861,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAG;
     private javax.swing.JMenuItem jMenuItemDadosEntrada;
+    private javax.swing.JMenuItem jMenuItemSobre;
     private javax.swing.JMenuItem jMenuItemTelaSemivariograma;
     private javax.swing.JMenu jMenuSobre;
     private javax.swing.JPanel jPanel1;
@@ -1733,6 +1871,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanelCruzamento;
     private javax.swing.JPanel jPanelDesenho;
     private javax.swing.JPanel jPanelMutacao;
