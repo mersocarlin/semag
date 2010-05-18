@@ -1226,7 +1226,7 @@ public class Tela extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jLabelImagem)
+                .addComponent(jLabelImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -1269,7 +1269,7 @@ public class Tela extends javax.swing.JFrame {
                     .addComponent(homepageLabel)
                     .addComponent(appHomepageLabel))
                 .addContainerGap(20, Short.MAX_VALUE))
-            .addComponent(jLabelImagem, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+            .addComponent(jLabelImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout jInternalFrameSobreLayout = new javax.swing.GroupLayout(jInternalFrameSobre.getContentPane());
@@ -1289,7 +1289,7 @@ public class Tela extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jInternalFrameSobre.setBounds(0, 0, 614, 246);
+        jInternalFrameSobre.setBounds(100, 20, 614, 240);
         jDesktopPane1.add(jInternalFrameSobre, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenuArquivo.setText("Arquivo");
@@ -1782,16 +1782,18 @@ public class Tela extends javax.swing.JFrame {
 
     private void jTableResultadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableResultadosMouseClicked
         if (evt.getClickCount() == 2) {
-            this.mostraResultado();
+            this.mostraResultado(); 
         }
     }//GEN-LAST:event_jTableResultadosMouseClicked
 
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
+        jInternalFrameSobre.setVisible(false);
         Component content = this.getContentPane();
         int x = (content.getWidth() - jInternalFrameSobre.getWidth()) / 2;
         int y = (content.getHeight() - jInternalFrameSobre.getHeight()) / 2;
         jInternalFrameSobre.setLocation(x, y);
         jInternalFrameSobre.setVisible(true);
+        System.out.println("entrou");
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     /**
