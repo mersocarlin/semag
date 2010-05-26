@@ -75,9 +75,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroupCruzamento = new javax.swing.ButtonGroup();
-        buttonGroupMutacao = new javax.swing.ButtonGroup();
-        buttonGroupSelecao = new javax.swing.ButtonGroup();
         jDesktopPane1 = new JDesktopPane() {
             @Override
             public void paintComponent(Graphics g) {
@@ -329,9 +326,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroupCruzamento;
-    private javax.swing.ButtonGroup buttonGroupMutacao;
-    private javax.swing.ButtonGroup buttonGroupSelecao;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrameSobre;
     private javax.swing.JLabel jLabel17;

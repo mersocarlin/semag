@@ -55,6 +55,9 @@ public class TelaAG extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupCruzamento = new javax.swing.ButtonGroup();
+        buttonGroupMutacao = new javax.swing.ButtonGroup();
+        buttonGroupSelecao = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jPanelCruzamento = new javax.swing.JPanel();
         jCheckBoxAritmetico = new javax.swing.JCheckBox();
@@ -95,18 +98,23 @@ public class TelaAG extends javax.swing.JInternalFrame {
         jPanelCruzamento.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cruzamento", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
         jCheckBoxAritmetico.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupCruzamento.add(jCheckBoxAritmetico);
         jCheckBoxAritmetico.setText("Aritmético");
 
         jCheckBoxBLX.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupCruzamento.add(jCheckBoxBLX);
         jCheckBoxBLX.setText("BLX");
 
         jCheckBoxHeuristico.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupCruzamento.add(jCheckBoxHeuristico);
         jCheckBoxHeuristico.setText("Heurístico");
 
         jCheckBoxMediaGeometrica.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupCruzamento.add(jCheckBoxMediaGeometrica);
         jCheckBoxMediaGeometrica.setText("Média Geométrica");
 
         jCheckBoxMediaSimples.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupCruzamento.add(jCheckBoxMediaSimples);
         jCheckBoxMediaSimples.setSelected(true);
         jCheckBoxMediaSimples.setText("Média Simples");
 
@@ -142,10 +150,12 @@ public class TelaAG extends javax.swing.JInternalFrame {
         jPanelSelecao.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Seleção", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
         jCheckBoxRoleta.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupSelecao.add(jCheckBoxRoleta);
         jCheckBoxRoleta.setSelected(true);
         jCheckBoxRoleta.setText("Roleta");
 
         jCheckBoxTorneio.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupSelecao.add(jCheckBoxTorneio);
         jCheckBoxTorneio.setText("Torneio");
 
         javax.swing.GroupLayout jPanelSelecaoLayout = new javax.swing.GroupLayout(jPanelSelecao);
@@ -181,21 +191,26 @@ public class TelaAG extends javax.swing.JInternalFrame {
         jPanelMutacao.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mutação", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
         jCheckBoxCreep.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupMutacao.add(jCheckBoxCreep);
         jCheckBoxCreep.setText("Creep");
 
         jCheckBoxGaussiana.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupMutacao.add(jCheckBoxGaussiana);
         jCheckBoxGaussiana.setText("Gaussiana");
         jCheckBoxGaussiana.setEnabled(false);
 
         jCheckBoxNaoUniforme.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupMutacao.add(jCheckBoxNaoUniforme);
         jCheckBoxNaoUniforme.setText("Não-Uniforme");
         jCheckBoxNaoUniforme.setEnabled(false);
 
         jCheckBoxNaoUniformeMultipla.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupMutacao.add(jCheckBoxNaoUniformeMultipla);
         jCheckBoxNaoUniformeMultipla.setText("Não-Uniforme Múltipla");
         jCheckBoxNaoUniformeMultipla.setEnabled(false);
 
         jCheckBoxUniforme.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupMutacao.add(jCheckBoxUniforme);
         jCheckBoxUniforme.setSelected(true);
         jCheckBoxUniforme.setText("Uniforme");
 
@@ -405,7 +420,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -542,6 +557,9 @@ public class TelaAG extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroupCruzamento;
+    private javax.swing.ButtonGroup buttonGroupMutacao;
+    private javax.swing.ButtonGroup buttonGroupSelecao;
     private javax.swing.JButton jButtonIniciarAG;
     private javax.swing.JCheckBox jCheckBoxAritmetico;
     private javax.swing.JCheckBox jCheckBoxBLX;
