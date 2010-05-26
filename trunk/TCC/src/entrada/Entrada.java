@@ -3,6 +3,7 @@ package entrada;
 
 import java.util.ArrayList;
 import java.util.List;
+import threads.BarraProgresso;
 
 /**
  *
@@ -137,8 +138,11 @@ public class Entrada {
 
     }
 
-    public void calculaDistancias() {
+    public void calculaDistancias(BarraProgresso t) {
+        t.start();
+        
         for (int i = 0; i < listaPontos.size(); i++) {
+            t.POSICAO = (int)(((double)i/(double)listaPontos.size())*100);
             for (int j = i; j < listaPontos.size(); j++) {
                 if (i != j) {
                     H h = new H();
@@ -153,6 +157,7 @@ public class Entrada {
                 }
             }
         }
+        t.POSICAO = 100;
         
         System.out.println("Distancias: " + this.distancias.size());
         /* atualiza o valor das variancias e seta os xmax e ymax pra plotagem na tela */
