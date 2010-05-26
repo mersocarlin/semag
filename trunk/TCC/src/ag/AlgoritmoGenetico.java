@@ -636,12 +636,12 @@ public class AlgoritmoGenetico {
     public String toString() {
         return "Tamanho da População: " + this.tamanhoPopulacao + "\n"
                 + "Gerações: " + this.tamanhoGeracao + "\n"
-                + "Taxa de Cruzamento: " + this.taxaCruzamento * 100 + "%\n"
-                + "Taxa de Mutacao: " + this.taxaMutacao * 100 + "%\n"
+                + "Tx Cruzamento: " + this.taxaCruzamento * 100 + "%\n"
+                + "Tx Mutação: " + this.taxaMutacao * 100 + "%\n"
                 + "Elitismo: " + this.elitismo * 100 + "%\n"
-                + "Método Mutação: " + this.mutacao + "\n"
-                + "Método Seleção: " + this.selecao + "\n"
-                + "Método Cruzamento: " + this.cruzamento + "\n";
+                + "Mutação: " + this.mutacao + "\n"
+                + "Seleção: " + this.selecao + "\n"
+                + "Cruzamento: " + this.cruzamento + "\n";
     }
 }
 
