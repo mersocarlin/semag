@@ -111,11 +111,11 @@ public class TelaAG extends javax.swing.JInternalFrame {
 
         jCheckBoxMediaGeometrica.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroupCruzamento.add(jCheckBoxMediaGeometrica);
-        jCheckBoxMediaGeometrica.setSelected(true);
         jCheckBoxMediaGeometrica.setText("Média Geométrica");
 
         jCheckBoxMediaSimples.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroupCruzamento.add(jCheckBoxMediaSimples);
+        jCheckBoxMediaSimples.setSelected(true);
         jCheckBoxMediaSimples.setText("Média Simples");
 
         javax.swing.GroupLayout jPanelCruzamentoLayout = new javax.swing.GroupLayout(jPanelCruzamento);
