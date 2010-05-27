@@ -8,7 +8,6 @@
  *
  * Created on 26/05/2010, 13:49:14
  */
-
 package visao;
 
 import ag.AlgoritmoGenetico;
@@ -34,6 +33,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
     TelaPrincipal telaPrincipal;
     TelaSemivariograma telaSemivariograma;
     TelaResultado telaResultado;
+
     /** Creates new form TelaAG */
     public TelaAG(Parametros param, TelaPrincipal telaPrincipal, TelaSemivariograma telaSemivariograma, TelaResultado telaResultado) {
         initComponents();
@@ -111,11 +111,11 @@ public class TelaAG extends javax.swing.JInternalFrame {
 
         jCheckBoxMediaGeometrica.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroupCruzamento.add(jCheckBoxMediaGeometrica);
+        jCheckBoxMediaGeometrica.setSelected(true);
         jCheckBoxMediaGeometrica.setText("Média Geométrica");
 
         jCheckBoxMediaSimples.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroupCruzamento.add(jCheckBoxMediaSimples);
-        jCheckBoxMediaSimples.setSelected(true);
         jCheckBoxMediaSimples.setText("Média Simples");
 
         javax.swing.GroupLayout jPanelCruzamentoLayout = new javax.swing.GroupLayout(jPanelCruzamento);
@@ -420,7 +420,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -471,9 +471,14 @@ public class TelaAG extends javax.swing.JInternalFrame {
                 modeloResultado.removeRow(0);
             }
 
+            long inicio = System.currentTimeMillis();
             ag.inicia(telaSemivariograma.getJSliderAlcance().getMaximum(),
                     telaSemivariograma.getJSliderEfeitoPepita().getMaximum(), param, t,
                     telaResultado.getJTextAreaResultado(), modeloResultado);
+            long fim = System.currentTimeMillis();
+            long exec = (fim - inicio);
+            telaResultado.getJTextAreaResultado().append("\nTempo de Execução: \n");
+            telaResultado.getJTextAreaResultado().append(exec + " ms ou " + (exec * 0.001) + " seg");
             this.setVisible(false);
 
             Component content = telaPrincipal.getContentPane();
@@ -493,9 +498,11 @@ public class TelaAG extends javax.swing.JInternalFrame {
             int a = new Integer("" + telaResultado.getJTableResultado().getValueAt(linha, 0));
             double c0 = Double.parseDouble("" + telaResultado.getJTableResultado().getValueAt(linha, 1));
             double c1 = Double.parseDouble("" + telaResultado.getJTableResultado().getValueAt(linha, 2));
+            double f = Double.parseDouble("" + telaResultado.getJTableResultado().getValueAt(linha, 3));
             telaResultado.getJTextFieldResultadoAlcance().setText("" + a);
             telaResultado.getJTextFieldResultadoEfeitoPepita().setText("" + c0);
             telaResultado.getJTextFieldResultadoContribuicao().setText("" + c1);
+            telaResultado.getJTextFieldResultadoFitness().setText("" + f);
 
             telaSemivariograma.desenhaGrafico();
         } catch (Exception e) {
@@ -554,8 +561,6 @@ public class TelaAG extends javax.swing.JInternalFrame {
         jTextFieldElitismo.setSelectionStart(0);
         jTextFieldElitismo.setSelectionEnd(jTextFieldElitismo.getText().length());
 }//GEN-LAST:event_jTextFieldElitismoFocusGained
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupCruzamento;
     private javax.swing.ButtonGroup buttonGroupMutacao;
@@ -617,8 +622,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
         return false;
     }
 
-    public JProgressBar getJProgressBarAG(){
+    public JProgressBar getJProgressBarAG() {
         return this.jProgressBarAG;
     }
-
 }
