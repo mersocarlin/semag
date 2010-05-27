@@ -202,13 +202,13 @@ public class AlgoritmoGenetico {
      * ou o filho fica igual ao pai com melhor aptidao
      */
     public Cromossomo cruzamentoMediaGeometrica(Cromossomo P1, Cromossomo P2, Parametros param) {
-        Cromossomo filho = null;
+        Cromossomo filho = new Cromossomo();
         Random rand = new Random();
         double var = Math.min(rand.nextDouble(), 1.0);
         if (var < this.taxaCruzamento) {
-            filho.setAlcance((int) Math.sqrt(Math.pow(P1.getAlcance(), 2) + Math.pow(P2.getAlcance(), 2)));
-            filho.setEfeitoPepita(Math.sqrt(Math.pow(P1.getEfeitoPepita(), 2) + Math.pow(P2.getEfeitoPepita(), 2)));
-            filho.setContribuicao(Math.sqrt(Math.pow(P1.getContribuicao(), 2) + Math.pow(P2.getContribuicao(), 2)));
+            filho.setAlcance((int) Math.sqrt(Math.pow(P1.getAlcance(), 2.0) + Math.pow(P2.getAlcance(), 2.0)));
+            filho.setEfeitoPepita(Math.sqrt(Math.pow(P1.getEfeitoPepita(), 2.0) + Math.pow(P2.getEfeitoPepita(), 2.0)));
+            filho.setContribuicao(Math.sqrt(Math.pow(P1.getContribuicao(), 2.0) + Math.pow(P2.getContribuicao(), 2.0)));
             Double fitness = this.calculaFitness(filho, param);
             filho.setFitness(fitness);
         } else {
@@ -267,7 +267,7 @@ public class AlgoritmoGenetico {
      * ou os filhos ficam iguais aos pais
      */
     public List<Cromossomo> cruzamentoAritmetico(Cromossomo P1, Cromossomo P2, Parametros param) {
-        List lista = null;
+        List lista = new ArrayList<Cromossomo>();
         Cromossomo filho1 = null;
         Cromossomo filho2 = null;
         Random rand = new Random();
@@ -275,7 +275,6 @@ public class AlgoritmoGenetico {
 
         double var = Math.min(rand.nextDouble(), 1.0);
         if (var < this.taxaCruzamento) {
-            lista = new ArrayList<Cromossomo>();
             filho1 = new Cromossomo();
             filho2 = new Cromossomo();
             beta = Math.min(rand.nextDouble(), 1.0);
