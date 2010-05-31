@@ -8,18 +8,34 @@
  *
  * Created on 26/05/2010, 14:05:26
  */
-
 package visao;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.io.File;
+import java.io.IOException;
+import java.text.NumberFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import jxl.Workbook;
+import jxl.write.Formula;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
+import jxl.write.Number;
+import jxl.write.NumberFormats;
+import jxl.write.WritableCellFormat;
 
 /**
  *
@@ -33,7 +49,7 @@ public class TelaResultado extends javax.swing.JInternalFrame {
     TelaAG telaAG;
 
     /** Creates new form TelaResultado */
-    public TelaResultado() {    
+    public TelaResultado() {
         initComponents();
         jTextFieldResultadoAlcance.setBackground(Color.WHITE);
         jTextFieldResultadoContribuicao.setBackground(Color.WHITE);
@@ -279,6 +295,11 @@ public class TelaResultado extends javax.swing.JInternalFrame {
         jScrollPane2.setViewportView(jTableResultadosSessao);
 
         jButtonSalvarTabela.setText("Salvar Tabela");
+        jButtonSalvarTabela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarTabelaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -351,7 +372,61 @@ public class TelaResultado extends javax.swing.JInternalFrame {
         }
 }//GEN-LAST:event_jTableResultadosMouseClicked
 
+    private void jButtonSalvarTabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarTabelaActionPerformed
+        JFileChooser fc = new JFileChooser();
+        fc.setDialogTitle("Escolha o local para salvar a tabela");
+        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); // restringe a amostra a diretorios apenas
+        fc.setFileFilter(new FileNameExtensionFilter("Planilha do Microsoft Excel", "xls"));
+        fc.setCurrentDirectory(new File("arquivos/"));
+        int res = fc.showOpenDialog(null);
 
+        if (res == JFileChooser.APPROVE_OPTION) {
+            File arquivo = fc.getSelectedFile();
+            String dir = arquivo.getAbsolutePath();
+            dir = dir.replace("\\", "/");
+            try {
+                WritableWorkbook workbook = Workbook.createWorkbook(new File(dir + ".xls"));
+                WritableSheet sheet = workbook.createSheet("Resultado", 0);
+                DefaultTableModel modelo = (DefaultTableModel) jTableResultadosSessao.getModel();
+
+                Label label = new Label(0, 0, "");
+                sheet.addCell(label);
+                label = new Label(1, 0, "Estimador");
+                sheet.addCell(label);
+                label = new Label(2, 0, "Modelo");
+                sheet.addCell(label);
+                label = new Label(3, 0, "Cruzamento");
+                sheet.addCell(label);
+                label = new Label(4, 0, "Mutação");
+                sheet.addCell(label);
+                label = new Label(5, 0, "Tempo (ms)");
+                sheet.addCell(label);
+                label = new Label(6, 0, "Eficiência");
+                sheet.addCell(label);
+
+                for (int i = 0; i < modelo.getRowCount(); i++) {
+                    for (int j = 0; j < modelo.getColumnCount(); j++) {
+                        if ((j == 0) || (j == 5)) {
+                            int valor = Integer.parseInt("" + modelo.getValueAt(i, j));
+                            Number n = new Number(j, i + 1, valor);
+                            sheet.addCell(n);
+                        } else {
+                            label = new Label(j, i + 1, "" + modelo.getValueAt(i, j));
+                            sheet.addCell(label);
+                        }
+                    }
+                }
+                workbook.write();
+                workbook.close();
+                JOptionPane.showMessageDialog(null, "Tabela salva com sucesso!", dir, JOptionPane.INFORMATION_MESSAGE);
+            } catch (WriteException ex) {
+                Logger.getLogger(TelaResultado.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(TelaResultado.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else { //nao selecionou nenhum diretorio
+        }
+    }//GEN-LAST:event_jButtonSalvarTabelaActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSalvarTabela;
     private javax.swing.JButton jButtonVerResultado;
@@ -396,51 +471,51 @@ public class TelaResultado extends javax.swing.JInternalFrame {
         }
     }
 
-    public JTable getJTableResultado(){
+    public JTable getJTableResultado() {
         return this.jTableResultados;
     }
 
-    public JTable getJTableResultadosSessao(){
+    public JTable getJTableResultadosSessao() {
         return this.jTableResultadosSessao;
     }
 
-    public JTextField getJTextFieldResultadoAlcance(){
+    public JTextField getJTextFieldResultadoAlcance() {
         return this.jTextFieldResultadoAlcance;
     }
 
-    public JTextField getJTextFieldResultadoEfeitoPepita(){
+    public JTextField getJTextFieldResultadoEfeitoPepita() {
         return this.jTextFieldResultadoEfeitoPepita;
     }
 
-    public JTextField getJTextFieldResultadoContribuicao(){
+    public JTextField getJTextFieldResultadoContribuicao() {
         return this.jTextFieldResultadoContribuicao;
     }
 
-    public JTextField getJTextFieldResultadoFitness(){
+    public JTextField getJTextFieldResultadoFitness() {
         return this.jTextFieldResultadoFitness;
     }
 
-    public JTextArea getJTextAreaResultado(){
+    public JTextArea getJTextAreaResultado() {
         return this.jTextAreaResultado;
     }
 
-    public JTabbedPane getJTabbedPane(){
+    public JTabbedPane getJTabbedPane() {
         return this.jTabbedPane1;
     }
 
-    public void setTelaAG(TelaAG telaAG){
+    public void setTelaAG(TelaAG telaAG) {
         this.telaAG = telaAG;
     }
 
-    public void setTelaSemivariograma(TelaSemivariograma telaSemivariograma){
+    public void setTelaSemivariograma(TelaSemivariograma telaSemivariograma) {
         this.telaSemivariograma = telaSemivariograma;
     }
 
-    public DefaultTableModel getModeloTabelaResultadosSessao(){
+    public DefaultTableModel getModeloTabelaResultadosSessao() {
         return (DefaultTableModel) this.jTableResultadosSessao.getModel();
     }
 
-    public void arrumaTabelaResultadosSessao(){
+    public void arrumaTabelaResultadosSessao() {
         jTableResultadosSessao.getColumnModel().getColumn(0).setPreferredWidth(50);
         jTableResultadosSessao.getColumnModel().getColumn(1).setPreferredWidth(100);
         jTableResultadosSessao.getColumnModel().getColumn(2).setPreferredWidth(100);
@@ -448,9 +523,8 @@ public class TelaResultado extends javax.swing.JInternalFrame {
         jTableResultadosSessao.getColumnModel().getColumn(4).setPreferredWidth(100);
         jTableResultadosSessao.getColumnModel().getColumn(5).setPreferredWidth(80);
         jTableResultadosSessao.getColumnModel().getColumn(6).setPreferredWidth(160);
-        for(int i = 0; i < jTableResultadosSessao.getColumnCount(); i++){
+        for (int i = 0; i < jTableResultadosSessao.getColumnCount(); i++) {
             jTableResultadosSessao.getColumnModel().getColumn(i).setCellRenderer(cellRenderer);
         }
     }
-
 }
