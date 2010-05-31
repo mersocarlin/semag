@@ -64,6 +64,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
 
         param = new Parametros();
+        telaResultado = new TelaResultado();
     }
 
     /** This method is called from within the constructor to
@@ -283,8 +284,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemDadosEntradaActionPerformed
 
     private void jMenuItemAGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAGActionPerformed
+        modelo = telaResultado.getModeloTabelaResultadosSessao();
         telaResultado = new TelaResultado();
-        jDesktopPane1.add(telaResultado);
+        telaResultado.getJTableResultadosSessao().setModel(modelo);
+        telaResultado.arrumaTabelaResultadosSessao();
+        jDesktopPane1.add(this.telaResultado);
         
         telaAG = new TelaAG(this.param, this, this.telaSemivariograma, this.telaResultado);
         jDesktopPane1.add(telaAG);
@@ -348,5 +352,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemTelaSemivariograma;
     private javax.swing.JMenu jMenuSobre;
     // End of variables declaration//GEN-END:variables
-    
+
+    public Parametros getParam(){
+        return this.param;
+    }
 }

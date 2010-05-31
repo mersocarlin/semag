@@ -41,6 +41,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
         this.telaPrincipal = telaPrincipal;
         this.telaSemivariograma = telaSemivariograma;
         this.telaResultado = telaResultado;
+        this.telaResultado.setVisible(false);
         this.ag = new AlgoritmoGenetico();
         jProgressBarAG.setStringPainted(false);
         jProgressBarAG.setValue(0);
@@ -103,6 +104,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
 
         jCheckBoxBLX.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroupCruzamento.add(jCheckBoxBLX);
+        jCheckBoxBLX.setSelected(true);
         jCheckBoxBLX.setText("BLX");
 
         jCheckBoxHeuristico.setBackground(new java.awt.Color(255, 255, 255));
@@ -115,7 +117,6 @@ public class TelaAG extends javax.swing.JInternalFrame {
 
         jCheckBoxMediaSimples.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroupCruzamento.add(jCheckBoxMediaSimples);
-        jCheckBoxMediaSimples.setSelected(true);
         jCheckBoxMediaSimples.setText("Média Simples");
 
         javax.swing.GroupLayout jPanelCruzamentoLayout = new javax.swing.GroupLayout(jPanelCruzamento);
@@ -420,7 +421,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -479,6 +480,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
             long exec = (fim - inicio);
             telaResultado.getJTextAreaResultado().append("\nTempo de Execução: \n");
             telaResultado.getJTextAreaResultado().append(exec + " ms ou " + (exec * 0.001) + " seg");
+
             this.setVisible(false);
 
             Component content = telaPrincipal.getContentPane();
@@ -492,6 +494,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
 
             telaResultado.setTelaAG(this);
             telaResultado.setTelaSemivariograma(this.telaSemivariograma);
+            telaResultado.getJTabbedPane().setSelectedIndex(0);
 
             /* Mostra melhor cromossomo */
             int linha = telaResultado.getJTableResultado().getRowCount() - 1;
@@ -503,6 +506,13 @@ public class TelaAG extends javax.swing.JInternalFrame {
             telaResultado.getJTextFieldResultadoEfeitoPepita().setText("" + c0);
             telaResultado.getJTextFieldResultadoContribuicao().setText("" + c1);
             telaResultado.getJTextFieldResultadoFitness().setText("" + f);
+
+            /*insere na tabela resultados sessao */
+            modeloResultado = (DefaultTableModel)telaResultado.getJTableResultadosSessao().getModel();
+            Object[] linhaResultado = new Object[]{""+(modeloResultado.getRowCount()+1),telaPrincipal.getParam().getMetodoEstimacao(),
+            telaPrincipal.getParam().getModeloMatematico(),ag.getCruzamento(), ag.getMutacao(),exec, ""+f};
+            modeloResultado.addRow(linhaResultado);
+            telaResultado.getJTableResultadosSessao().setModel(modeloResultado);
 
             telaSemivariograma.desenhaGrafico();
         } catch (Exception e) {
