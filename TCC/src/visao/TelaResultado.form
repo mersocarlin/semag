@@ -35,7 +35,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="1"/>
+              <Component id="jTabbedPane1" pref="522" max="32767" attributes="1"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -108,10 +108,10 @@
                                   <Component id="jScrollPane1" min="-2" pref="276" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                                  <EmptySpace pref="14" max="32767" attributes="0"/>
                                   <Component id="jButtonVoltarTelaAG" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane7" alignment="0" pref="468" max="32767" attributes="0"/>
+                              <Component id="jScrollPane7" alignment="0" pref="472" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -345,7 +345,7 @@
                       <Component id="jScrollPane2" min="-2" pref="439" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButtonSalvarTabela" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -381,6 +381,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salvar Tabela"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSalvarTabelaActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

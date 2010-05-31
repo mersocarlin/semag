@@ -359,7 +359,7 @@ public class TelaEntrada extends javax.swing.JInternalFrame {
         fc.setDialogTitle("Selecione arquivo de texto com os dados para a variável X");
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // restringe a amostra a diretorios apenas
         fc.setFileFilter(new FileNameExtensionFilter("Arquivos de texto", "txt"));
-        fc.setCurrentDirectory(new File("arquivos/"));
+        fc.setCurrentDirectory(new File("arquivos/txt"));
         int res = fc.showOpenDialog(null);
         if (res == JFileChooser.APPROVE_OPTION) {
             File arquivo = fc.getSelectedFile();
@@ -373,7 +373,7 @@ public class TelaEntrada extends javax.swing.JInternalFrame {
         fc.setDialogTitle("Selecione arquivo de texto com os dados para a variável Y");
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // restringe a amostra a diretorios apenas
         fc.setFileFilter(new FileNameExtensionFilter("Arquivos de texto", "txt"));
-        fc.setCurrentDirectory(new File("arquivos/"));
+        fc.setCurrentDirectory(new File("arquivos/txt"));
         int res = fc.showOpenDialog(null);
         if (res == JFileChooser.APPROVE_OPTION) {
             File arquivo = fc.getSelectedFile();
@@ -387,7 +387,7 @@ public class TelaEntrada extends javax.swing.JInternalFrame {
         fc.setDialogTitle("Selecione arquivo de texto com os dados para a variável Z");
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // restringe a amostra a diretorios apenas
         fc.setFileFilter(new FileNameExtensionFilter("Arquivos de texto", "txt"));
-        fc.setCurrentDirectory(new File("arquivos/"));
+        fc.setCurrentDirectory(new File("arquivos/txt"));
         int res = fc.showOpenDialog(null);
         if (res == JFileChooser.APPROVE_OPTION) {
             File arquivo = fc.getSelectedFile();

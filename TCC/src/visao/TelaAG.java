@@ -510,7 +510,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
             /*insere na tabela resultados sessao */
             modeloResultado = (DefaultTableModel)telaResultado.getJTableResultadosSessao().getModel();
             Object[] linhaResultado = new Object[]{""+(modeloResultado.getRowCount()+1),telaPrincipal.getParam().getMetodoEstimacao(),
-            telaPrincipal.getParam().getModeloMatematico(),ag.getCruzamento(), ag.getMutacao(),exec, ""+f};
+            telaPrincipal.getParam().getModeloMatematico(),ag.getCruzamento(), ag.getMutacao(),exec, (String)(""+f).replace(".", ",")};
             modeloResultado.addRow(linhaResultado);
             telaResultado.getJTableResultadosSessao().setModel(modeloResultado);
 
