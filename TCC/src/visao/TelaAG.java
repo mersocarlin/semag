@@ -104,11 +104,11 @@ public class TelaAG extends javax.swing.JInternalFrame {
 
         jCheckBoxBLX.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroupCruzamento.add(jCheckBoxBLX);
-        jCheckBoxBLX.setSelected(true);
         jCheckBoxBLX.setText("BLX");
 
         jCheckBoxHeuristico.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroupCruzamento.add(jCheckBoxHeuristico);
+        jCheckBoxHeuristico.setSelected(true);
         jCheckBoxHeuristico.setText("Heurístico");
 
         jCheckBoxMediaGeometrica.setBackground(new java.awt.Color(255, 255, 255));
@@ -421,7 +421,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -508,9 +508,9 @@ public class TelaAG extends javax.swing.JInternalFrame {
             telaResultado.getJTextFieldResultadoFitness().setText("" + f);
 
             /*insere na tabela resultados sessao */
-            modeloResultado = (DefaultTableModel)telaResultado.getJTableResultadosSessao().getModel();
-            Object[] linhaResultado = new Object[]{""+(modeloResultado.getRowCount()+1),telaPrincipal.getParam().getMetodoEstimacao(),
-            telaPrincipal.getParam().getModeloMatematico(),ag.getCruzamento(), ag.getMutacao(),exec, (String)(""+f).replace(".", ",")};
+            modeloResultado = (DefaultTableModel) telaResultado.getJTableResultadosSessao().getModel();
+            Object[] linhaResultado = new Object[]{"" + (modeloResultado.getRowCount() + 1), telaPrincipal.getParam().getMetodoEstimacao(),
+                telaPrincipal.getParam().getModeloMatematico(), ag.getCruzamento(), ag.getMutacao(), exec, (String) ("" + f).replace(".", ",")};
             modeloResultado.addRow(linhaResultado);
             telaResultado.getJTableResultadosSessao().setModel(modeloResultado);
 
