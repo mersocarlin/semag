@@ -1,0 +1,97 @@
+int i = 0;
+        Cursor cursor = new Cursor(Cursor.WAIT_CURSOR);
+        this.setCursor(cursor);
+        while (i < 6) {
+            try {
+                /* SETA METODO DE SELECAO */
+                ag.setSelecao(jCheckBoxRoleta.isSelected() ? "Roleta"
+                        : (jCheckBoxTorneio.isSelected() ? "Torneio" : "Roleta"));
+
+                /* SETA METODO DE CRUZAMENTO */
+                ag.setCruzamento(jCheckBoxAritmetico.isSelected() ? "Aritmetico"
+                        : (jCheckBoxBLX.isSelected() ? "BLX"
+                        : (jCheckBoxHeuristico.isSelected() ? "Heuristico"
+                        : (jCheckBoxMediaGeometrica.isSelected() ? "Media Geometrica"
+                        : (jCheckBoxMediaSimples.isSelected() ? "Media Simples" : "Media Simples")))));
+
+                /* SETA METODO DE MUTACAO */
+                ag.setMutacao(jCheckBoxCreep.isSelected() ? "Creep"
+                        : (jCheckBoxGaussiana.isSelected() ? "Gaussiana"
+                        : (jCheckBoxNaoUniforme.isSelected() ? "Nao-Uniforme"
+                        : (jCheckBoxNaoUniformeMultipla.isSelected() ? "Nao-Uniforme Multipla"
+                        : (jCheckBoxMediaSimples.isSelected() ? "Uniforme" : "Uniforme")))));
+
+
+                this.trataValorDigitado(jTextFieldTamPopulacao.getText());
+                this.trataValorDigitado(jTextFieldNumGeracoes.getText());
+                this.trataValorDigitado(jTextFieldTxCruzamento.getText());
+                this.trataValorDigitado(jTextFieldTxMutacao.getText());
+                this.trataValorDigitado(jTextFieldElitismo.getText());
+
+                ag.setGeracoes(new ArrayList<List>());
+                ag.setPopulacao(new ArrayList<Cromossomo>());
+                ag.setTamanhoPopulacao(Integer.parseInt(jTextFieldTamPopulacao.getText()));
+                ag.setTaxaMutacao(Double.parseDouble(jTextFieldTxMutacao.getText()) / 100);
+                ag.setTaxaCruzamento(Double.parseDouble(jTextFieldTxCruzamento.getText()) / 100);
+                ag.setTamanhoGeracao(Integer.parseInt(jTextFieldNumGeracoes.getText()));
+                ag.setElitismo(Double.parseDouble(jTextFieldElitismo.getText()) / 100);
+
+                jProgressBarAG.setStringPainted(true);
+                BarraProgresso t = new BarraProgresso(jProgressBarAG, 0);
+
+                modeloResultado = (DefaultTableModel) telaResultado.getJTableResultado().getModel();
+                while (modeloResultado.getRowCount() > 0) {
+                    modeloResultado.removeRow(0);
+                }
+
+                long inicio = System.currentTimeMillis();
+                ag.inicia(telaSemivariograma.getJSliderAlcance().getMaximum(),
+                        telaSemivariograma.getJSliderEfeitoPepita().getMaximum(), param, t,
+                        telaResultado.getJTextAreaResultado(), modeloResultado);
+                long fim = System.currentTimeMillis();
+                long exec = (fim - inicio);
+//                telaResultado.getJTextAreaResultado().append("\nTempo de Execução: \n");
+//                telaResultado.getJTextAreaResultado().append(exec + " ms ou " + (exec * 0.001) + " seg");
+
+                t.POSICAO = jProgressBarAG.getMaximum();
+                t.interrupt();
+
+                /* Mostra melhor cromossomo */
+                int linha = telaResultado.getJTableResultado().getRowCount() - 1;
+                int a = new Integer("" + telaResultado.getJTableResultado().getValueAt(linha, 0));
+                double c0 = Double.parseDouble("" + telaResultado.getJTableResultado().getValueAt(linha, 1));
+                double c1 = Double.parseDouble("" + telaResultado.getJTableResultado().getValueAt(linha, 2));
+                double f = Double.parseDouble("" + telaResultado.getJTableResultado().getValueAt(linha, 3));
+                telaResultado.getJTextFieldResultadoAlcance().setText("" + a);
+                telaResultado.getJTextFieldResultadoEfeitoPepita().setText("" + c0);
+                telaResultado.getJTextFieldResultadoContribuicao().setText("" + c1);
+                telaResultado.getJTextFieldResultadoFitness().setText("" + f);
+
+                /*insere na tabela resultados sessao */
+                modeloResultado = (DefaultTableModel) telaResultado.getJTableResultadosSessao().getModel();
+                Object[] linhaResultado = new Object[]{"" + (modeloResultado.getRowCount() + 1), telaPrincipal.getParam().getMetodoEstimacao(),
+                    telaPrincipal.getParam().getModeloMatematico(), ag.getCruzamento(), ag.getMutacao(), exec, (String) ("" + f).replace(".", ",")};
+                modeloResultado.addRow(linhaResultado);
+                telaResultado.getJTableResultadosSessao().setModel(modeloResultado);
+
+                telaSemivariograma.desenhaGrafico();
+            } catch (Exception e) {
+                System.out.println("erro aqui" + e);
+                JOptionPane.showMessageDialog(null, "ERRO!", "Erro ao iniciar AG", JOptionPane.INFORMATION_MESSAGE);
+            }
+            i++;
+        }
+        this.setVisible(false);
+
+        telaResultado.setTelaAG(this);
+        telaResultado.setTelaSemivariograma(this.telaSemivariograma);
+        telaResultado.getJTabbedPane().setSelectedIndex(0);
+
+        Component content = telaPrincipal.getContentPane();
+        int x = (content.getWidth() - telaResultado.getWidth()) / 2;
+        int y = (content.getHeight() - telaResultado.getHeight()) / 2;
+        telaResultado.setLocation(x, y);
+        telaResultado.setVisible(true);
+
+        cursor = new Cursor(Cursor.DEFAULT_CURSOR);
+        this.setCursor(cursor);
