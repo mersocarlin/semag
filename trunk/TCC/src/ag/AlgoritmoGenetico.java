@@ -537,8 +537,8 @@ public class AlgoritmoGenetico {
     public void inicia(int maxAlcance, double maxEP, Parametros param, BarraProgresso t,
             JTextArea jTextAreaResultado, DefaultTableModel modeloResultado) {
         jTextAreaResultado.setText("");
-        jTextAreaResultado.append("Modelo Matemático: " + param.getModeloMatematico() + "\n");
-        jTextAreaResultado.append("Método de Estimação: " + param.getMetodoEstimacao() + "\n");
+        jTextAreaResultado.append("Modelo: " + param.getModeloMatematico() + "\n");
+        jTextAreaResultado.append("Método: " + param.getMetodoEstimacao() + "\n");
         jTextAreaResultado.append("\n");
         jTextAreaResultado.append("***** AG ***** \n");
         jTextAreaResultado.append(this.toString());

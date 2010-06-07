@@ -421,7 +421,7 @@ public class TelaAG extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -508,9 +508,9 @@ public class TelaAG extends javax.swing.JInternalFrame {
             telaResultado.getJTextFieldResultadoFitness().setText("" + f);
 
             /*insere na tabela resultados sessao */
-            modeloResultado = (DefaultTableModel) telaResultado.getJTableResultadosSessao().getModel();
-            Object[] linhaResultado = new Object[]{"" + (modeloResultado.getRowCount() + 1), telaPrincipal.getParam().getMetodoEstimacao(),
-                telaPrincipal.getParam().getModeloMatematico(), ag.getCruzamento(), ag.getMutacao(), exec, (String) ("" + f).replace(".", ",")};
+            modeloResultado = (DefaultTableModel)telaResultado.getJTableResultadosSessao().getModel();
+            Object[] linhaResultado = new Object[]{""+(modeloResultado.getRowCount()+1),telaPrincipal.getParam().getMetodoEstimacao(),
+            telaPrincipal.getParam().getModeloMatematico(),ag.getCruzamento(), ag.getMutacao(),exec, (String)(""+f).replace(".", ",")};
             modeloResultado.addRow(linhaResultado);
             telaResultado.getJTableResultadosSessao().setModel(modeloResultado);
 

@@ -1,7 +1,7 @@
 int i = 0;
         Cursor cursor = new Cursor(Cursor.WAIT_CURSOR);
         this.setCursor(cursor);
-        while (i < 6) {
+        while (i < 4) {
             try {
                 /* SETA METODO DE SELECAO */
                 ag.setSelecao(jCheckBoxRoleta.isSelected() ? "Roleta"

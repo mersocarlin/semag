@@ -130,6 +130,7 @@ public class TelaResultado extends javax.swing.JInternalFrame {
 
         jTextAreaResultado.setColumns(20);
         jTextAreaResultado.setEditable(false);
+        jTextAreaResultado.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jTextAreaResultado.setRows(5);
         jScrollPane1.setViewportView(jTextAreaResultado);
 
@@ -249,9 +250,9 @@ public class TelaResultado extends javax.swing.JInternalFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                         .addComponent(jButtonVoltarTelaAG, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -315,7 +316,7 @@ public class TelaResultado extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonSalvarTabela)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Resultados Sessão", jPanel3);
@@ -333,7 +334,7 @@ public class TelaResultado extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
