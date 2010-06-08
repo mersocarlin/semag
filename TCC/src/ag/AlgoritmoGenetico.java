@@ -457,7 +457,7 @@ public class AlgoritmoGenetico {
      * Metodo de selecao por roleta: randomiza um numero de 0 ate a soma total dos fitness.
      * Somando-se os fitness, retorna o cromossomo que possui a soma maior
      * do que o valor randomizado
-     * @return 
+     * @return
      */
     public Cromossomo selecaoRouletteWheel() {
         Random rand = new Random();
@@ -536,6 +536,7 @@ public class AlgoritmoGenetico {
 
     public void inicia(int maxAlcance, double maxEP, Parametros param, BarraProgresso t,
             JTextArea jTextAreaResultado, DefaultTableModel modeloResultado) {
+
         jTextAreaResultado.setText("");
         jTextAreaResultado.append("Modelo: " + param.getModeloMatematico() + "\n");
         jTextAreaResultado.append("Método: " + param.getMetodoEstimacao() + "\n");
