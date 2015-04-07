@@ -1,0 +1,1 @@
+Estimação dos parâmetros de semivariograma utilizando algoritmos genéticos.
